@@ -14,7 +14,7 @@ import java.util.List;
 import es.upm.farm.language.adapters.ProductsForBuyAdapter;
 import es.upm.farm.language.models.ProductsForBuy;
 
-public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnAddButtonClickListener {
+public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
 
 
     private RecyclerView recyclerView;
@@ -62,6 +62,16 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
     @Override
     public void onAddButtonClick(ProductsForBuy dataModel) {
         productsInCart.add(dataModel);
+        totalPrice.setText(String.valueOf(
+                productsInCart.stream()
+                        .mapToDouble(ProductsForBuy::getPrice)
+                        .sum()));
+    }
+
+
+    @Override
+    public void onRemoveButtonClick(ProductsForBuy dataModel) {
+        productsInCart.remove(dataModel);
         totalPrice.setText(String.valueOf(
                 productsInCart.stream()
                         .mapToDouble(ProductsForBuy::getPrice)
