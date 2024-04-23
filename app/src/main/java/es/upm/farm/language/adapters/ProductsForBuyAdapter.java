@@ -16,8 +16,8 @@ import es.upm.farm.language.models.ProductsForBuy;
 
 public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAdapter.ViewHolder> {
 
-    private List<ProductsForBuy> dataList;
-    private OnButtonClickListener buttonClickListener;
+    private final List<ProductsForBuy> dataList;
+    private final OnButtonClickListener buttonClickListener;
 
     public interface OnButtonClickListener {
         void onAddButtonClick(ProductsForBuy dataModel);

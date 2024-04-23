@@ -1,8 +1,8 @@
 package es.upm.farm.language.models;
 
 public class ProductsForBuy {
-    private String product;
-    private Integer price;
+    private final String product;
+    private final Integer price;
 
     public ProductsForBuy(String product, int price) {
         this.product = product;

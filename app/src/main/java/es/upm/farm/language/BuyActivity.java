@@ -15,10 +15,7 @@ import es.upm.farm.language.adapters.ProductsForBuyAdapter;
 import es.upm.farm.language.models.ProductsForBuy;
 
 public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
-
-
-    private RecyclerView recyclerView;
-    private ProductsForBuyAdapter adapter;
+    
     private List<ProductsForBuy> dataList;
 
     private List<ProductsForBuy> productsInCart;
@@ -41,8 +38,8 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
 
         //load the list with items for buying
         loadDataList();
-        recyclerView = findViewById(R.id.productsList);
-        adapter = new ProductsForBuyAdapter(dataList, this);
+        RecyclerView recyclerView = findViewById(R.id.productsList);
+        ProductsForBuyAdapter adapter = new ProductsForBuyAdapter(dataList, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
