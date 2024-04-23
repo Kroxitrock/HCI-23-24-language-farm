@@ -1,6 +1,9 @@
 package es.upm.farm.language;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,7 +18,7 @@ import es.upm.farm.language.adapters.ProductsForBuyAdapter;
 import es.upm.farm.language.models.ProductsForBuy;
 
 public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
-    
+
     private List<ProductsForBuy> dataList;
 
     private List<ProductsForBuy> productsInCart;
@@ -42,6 +45,16 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         ProductsForBuyAdapter adapter = new ProductsForBuyAdapter(dataList, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+        //Set buy click listener
+        findViewById(R.id.buyButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show the confirmation dialog
+                showConfirmationDialog();
+            }
+        });
     }
 
     private void loadDataList() {
@@ -65,7 +78,6 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
                         .sum()));
     }
 
-
     @Override
     public void onRemoveButtonClick(ProductsForBuy dataModel) {
         productsInCart.remove(dataModel);
@@ -73,5 +85,30 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
                 productsInCart.stream()
                         .mapToDouble(ProductsForBuy::getPrice)
                         .sum()));
+    }
+
+
+    private void showConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Are you sure you want to buy these products?");
+
+        // Add the buttons
+        builder.setPositiveButton("Buy", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked Buy button, proceed with the purchase
+                // TODO Add here the buy functionality
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog, do nothing
+                dialog.dismiss();
+            }
+        });
+
+        // Create and show the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
