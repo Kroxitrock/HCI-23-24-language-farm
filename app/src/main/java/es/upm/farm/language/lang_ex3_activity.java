@@ -25,43 +25,20 @@ public class lang_ex3_activity extends AppCompatActivity {
         text_valid_answer.setVisibility(View.INVISIBLE);
 
         Button btn_madrid = findViewById(R.id.btn_madrid);
-        btn_madrid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateInput(1);
-            }
-        });
+        btn_madrid.setOnClickListener(v -> validateInput(1));
 
         Button btn_derecha = findViewById(R.id.btn_derecha);
-        btn_derecha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateInput(2);
-            }
-        });
+        btn_derecha.setOnClickListener(v -> validateInput(2));
 
         Button btn_manzana = findViewById(R.id.btn_manzana);
-        btn_manzana.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateInput(3);
-            }
-        });
+        btn_manzana.setOnClickListener(v -> validateInput(3));
 
         Button btn_futbol = findViewById(R.id.btn_futbol);
-        btn_futbol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateInput(4);
-            }
-        });
+        btn_futbol.setOnClickListener(v -> validateInput(4));
 
-        btn_continue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent exc_sum = new Intent(lang_ex3_activity.this, ex_sum_activity.class);
-                //startActivity(exc_sum);
-            }
+        btn_continue.setOnClickListener(v -> {
+            //Intent exc_sum = new Intent(lang_ex3_activity.this, ex_sum_activity.class);
+            //startActivity(exc_sum);
         });
     }
 
