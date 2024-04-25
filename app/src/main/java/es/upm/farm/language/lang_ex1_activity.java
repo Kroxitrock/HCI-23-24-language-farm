@@ -17,6 +17,7 @@ public class lang_ex1_activity extends AppCompatActivity {
 
    private Button btn_continue;
    private TextView text_valid_answer;
+   private Integer cheese_count = 0;
 
     protected void onCreate (Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -58,6 +59,7 @@ public class lang_ex1_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent exercise2 = new Intent(lang_ex1_activity.this, lang_ex2_activity.class);
+                exercise2.putExtra("cheese_count", cheese_count);
                 startActivity(exercise2);
             }
         });
@@ -89,11 +91,12 @@ public class lang_ex1_activity extends AppCompatActivity {
             text_valid_answer.setText("Your answer was correct!");
             text_valid_answer.setVisibility(View.VISIBLE);
             btn_continue.setVisibility(View.VISIBLE);
+            cheese_count ++;
 
         }else{
             text_valid_answer.setText("Your answer was not correct.");
             text_valid_answer.setVisibility(View.VISIBLE);
-            btn_continue.setBackgroundColor(Color.RED);
+            btn_continue.setBackgroundColor(Color.rgb(106,37,37));
             btn_continue.setVisibility(View.VISIBLE);
         }
 
