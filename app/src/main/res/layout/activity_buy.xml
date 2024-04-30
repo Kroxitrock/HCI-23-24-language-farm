@@ -7,22 +7,12 @@
     android:orientation="vertical"
     tools:context=".BuyActivity">
 
-    <FrameLayout
-        android:id="@+id/headerContainer"
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
         android:layout_width="match_parent"
-        android:layout_height="90dp">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#70000000" />
-
-        <include
-            android:id="@+id/header"
-            layout="@layout/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
+        android:layout_height="100dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +39,7 @@
             android:id="@+id/coinsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Coins: +"
+            android:text="Coins: -"
             android:textColor="@color/white"
             android:textSize="40sp" />
 
@@ -65,14 +55,13 @@
             android:id="@+id/buyButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@drawable/wooden_tile_button"
+            android:gravity="center"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
             android:text="Buy"
-            android:gravity="center"
-            android:textSize="25sp"
             android:textColor="@color/white"
-            android:background="@drawable/wooden_tile_button"
-            />
+            android:textSize="25sp" />
 
 
     </LinearLayout>
