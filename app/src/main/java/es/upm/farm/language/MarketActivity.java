@@ -12,18 +12,13 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        findViewById(R.id.animalStand).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMarket(view);
-            }
-        });
+
+        findViewById(R.id.animalStand).setOnClickListener(this::openMarket);
     }
 
 
     public void openMarket(View view) {
-        Intent intent = new Intent(this, BuyActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, BuyActivity.class));
     }
 
 
