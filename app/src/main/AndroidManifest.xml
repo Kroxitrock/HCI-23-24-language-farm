@@ -13,8 +13,54 @@
         android:theme="@style/Theme.LanguageFarm"
         tools:targetApi="31">
         <activity
+            android:name=".start_lang_exc_activity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".lang_ex1_activity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".lang_ex2_activity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".lang_ex3_activity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SpeakingExercises1"
             android:exported="false" />
+
+        <activity
+            android:name=".exc_sum_activity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
