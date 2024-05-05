@@ -19,4 +19,10 @@
     <string name="example_answer_2">No quiero decírtelo. Tienes que decírmelo</string>
     <string name="start_speaking_exercise">Start Speaking exercise</string>
 
+    <string name="animals">Animals</string>
+    <string name="animals_label_dsc">A sign indicating this is the animal market.</string>
+    <string name="buildings">Buildings</string>
+    <string name="buildings_label_desc">A label indicating that this is the buildings market</string>
+    <string name="crops_label_desc">A label indicating this is the crops market.</string>
+    <string name="crops">Crops</string>
 </resources>
