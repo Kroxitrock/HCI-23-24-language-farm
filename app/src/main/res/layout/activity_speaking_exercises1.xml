@@ -17,15 +17,35 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/x"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1_2"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="30dp"
             android:paddingTop="50dp"
+            android:paddingBottom="30dp"
             android:text="@string/you_have_a_message_from_tony"
             android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/close_btn"
+            tools:layout_editor_absoluteX="20dp" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -98,9 +118,9 @@
                 android:id="@+id/result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="... answer!"
                 android:textSize="30sp"
-                android:gravity="center"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -111,14 +131,16 @@
                 app:layout_constraintBottom_toTopOf="@+id/btn_continue"
                 app:layout_constraintTop_toBottomOf="@+id/result"
                 tools:layout_editor_absoluteX="20dp" />
+
             <Button
                 android:id="@+id/btn_continue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/continue_str"
-                app:layout_constraintBottom_toBottomOf="parent"
-               />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

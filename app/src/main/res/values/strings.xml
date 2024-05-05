@@ -30,4 +30,7 @@
     <string name="got_it">Got it</string>
     <string name="tony"><b>Tony:</b></string>
     <string name="me"><b>Me:</b></string>
+    <string name="_1_2">1/2</string>
+    <string name="_2_2">2/2</string>
+    <string name="x">X</string>
 </resources>
