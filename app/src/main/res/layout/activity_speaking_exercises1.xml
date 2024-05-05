@@ -65,7 +65,7 @@
 
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/answer"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -75,6 +75,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+
         <Button
             android:id="@+id/confirm_button"
             android:layout_width="match_parent"
@@ -82,5 +83,42 @@
             android:text="Confirm"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/correct_pop_up"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="... answer!"
+                android:textSize="30sp"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tony said: ¿De dónde eres?"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_continue"
+                app:layout_constraintTop_toBottomOf="@+id/result"
+                tools:layout_editor_absoluteX="20dp" />
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Continue"
+                app:layout_constraintBottom_toBottomOf="parent"
+               />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
