@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.market_button).setOnClickListener(this::openMarket);
         findViewById(R.id.speaking_button).setOnClickListener(this::openCampFire);
+        findViewById(R.id.factory_button).setOnClickListener(this::openLanguageEx);
     }
 
     private void openMarket(View view) {
@@ -23,5 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void openCampFire(View view) {
         startActivity(new Intent(this, CampFire.class));
+    }
+
+    private void openLanguageEx(View view) {
+        startActivity(new Intent(this, lang_ex1_activity.class));
     }
 }

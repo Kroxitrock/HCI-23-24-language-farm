@@ -3,12 +3,17 @@ package es.upm.farm.language;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 public class SpeakingExercises1 extends AppCompatActivity {
 
@@ -17,6 +22,9 @@ public class SpeakingExercises1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_speaking_exercises1);
+
+
+        setBlackAudioButton();
         findViewById(R.id.confirm_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +47,17 @@ public class SpeakingExercises1 extends AppCompatActivity {
                 showCloseConfirmationDialog();
             }
         });
+    }
+
+    private void setBlackAudioButton() {
+        ImageView btnAudio = findViewById(R.id.btn_audio);
+        Drawable drawable = ContextCompat.getDrawable(this, android.R.drawable.ic_lock_silent_mode_off);
+
+        if (drawable != null) {
+            // Change the tint color to black
+            DrawableCompat.setTint(drawable, Color.BLACK);
+            btnAudio.setImageDrawable(drawable);
+        }
     }
 
     private void showConfirmationMessage() {

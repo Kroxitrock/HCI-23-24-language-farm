@@ -57,12 +57,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView1">
 
-            <Button
-                android:id="@+id/listen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="Listen" />
+
+            <ImageView
+                android:id="@+id/btn_audio"
+                android:layout_width="46dp"
+                android:layout_height="41dp" />
 
             <Button
                 android:id="@+id/slow_listen"
@@ -100,46 +99,58 @@
             android:id="@+id/confirm_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/grass"
             android:text="@string/confirm"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/correct_pop_up"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/white"
-            android:gravity="center_horizontal"
-            android:padding="20dp"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <TextView
-                android:id="@+id/result"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/correct_pop_up"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="... answer!"
-                android:textSize="30sp"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="match_parent"
+                android:background="#edb66d"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+               >
 
-            <TextView
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="... answer!"
+                    android:textSize="30sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tony_said"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_continue"
+                    app:layout_constraintTop_toBottomOf="@+id/result"
+                    tools:layout_editor_absoluteX="20dp" />
+
+                <Button
+                    android:id="@+id/btn_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/continue_str"
+                    android:backgroundTint="@color/grass"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tony_said"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/btn_continue"
-                app:layout_constraintTop_toBottomOf="@+id/result"
-                tools:layout_editor_absoluteX="20dp" />
+                android:layout_height="match_parent"
+                android:background="@drawable/black_border"/>
 
-            <Button
-                android:id="@+id/btn_continue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/continue_str"
-                app:layout_constraintBottom_toBottomOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
