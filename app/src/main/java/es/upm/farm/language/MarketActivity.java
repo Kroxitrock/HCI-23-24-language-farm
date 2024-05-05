@@ -6,17 +6,20 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MarketActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_market);
 
-        findViewById(R.id.market_button).setOnClickListener(this::openMarket);
+        findViewById(R.id.animalStand).setOnClickListener(this::openMarket);
     }
 
-    private void openMarket(View view) {
-        startActivity(new Intent(this, MarketActivity.class));
+
+    public void openMarket(View view) {
+        startActivity(new Intent(this, BuyActivity.class));
     }
+
+
 }
