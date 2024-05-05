@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/x"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:text="@string/_1_2"
             android:textSize="20dp"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +45,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="50dp"
+            android:textColor="@color/black"
             android:text="@string/you_have_a_message_from_tony"
             android:textSize="15sp"
             app:layout_constraintTop_toBottomOf="@+id/close_btn"
@@ -50,6 +53,7 @@
 
         <TextView
             android:id="@+id/textView10"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -63,6 +67,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="50dp"
+            android:textColor="@color/black"
             android:text="@string/give_an_answer_to_tony"
             android:textSize="15sp"
             app:layout_constraintTop_toBottomOf="@+id/textView10"
@@ -102,12 +107,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingBottom="10dp"
+            android:textColor="@color/black"
             android:text="@string/yo_soy_de_canada"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:text="@string/example_answers"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/example_answer_1"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -125,6 +133,7 @@
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="@string/example_answer_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -134,6 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/confirm"
+            android:textColor="@color/white"
             android:backgroundTint="@color/grass"
             app:layout_constraintBottom_toBottomOf="parent" />
 

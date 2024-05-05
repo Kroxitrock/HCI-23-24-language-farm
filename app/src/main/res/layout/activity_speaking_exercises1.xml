@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/x"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +32,7 @@
             android:layout_height="wrap_content"
             android:text="@string/_1_2"
             android:textSize="20dp"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +46,7 @@
             android:paddingBottom="30dp"
             android:text="@string/you_have_a_message_from_tony"
             android:textSize="15sp"
+            android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/close_btn"
             tools:layout_editor_absoluteX="20dp" />
 
@@ -80,6 +83,7 @@
             android:paddingBottom="30dp"
             android:text="@string/what_did_tony_say_in_their_language"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
@@ -124,9 +128,11 @@
                     android:gravity="center"
                     android:text="... answer!"
                     android:textSize="30sp"
+                    android:textColor="@color/black"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tony_said"
@@ -140,6 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/continue_str"
+                    android:textColor="@color/white"
                     android:backgroundTint="@color/grass"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
