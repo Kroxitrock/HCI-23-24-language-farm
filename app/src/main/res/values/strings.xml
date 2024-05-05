@@ -6,4 +6,16 @@
     <string name="market_button_dsc">A button leading to the market.</string>
     <string name="speaking">Speaking</string>
     <string name="speaking_button_dsc">A button leading to the speaking exercise camp.</string>
+    <string name="you_have_a_message_from_tony">You have a message from Tony:</string>
+    <string name="tony_said">Tony said: ¿De dónde eres?</string>
+    <string name="continue_str">Continue</string>
+    <string name="what_did_tony_say_in_their_language">What did Tony say in their language?</string>
+    <string name="confirm">Confirm</string>
+    <string name="de_donde_eres">"\"¿De dónde eres?\""</string>
+    <string name="give_an_answer_to_tony">Give an answer to Tony</string>
+    <string name="yo_soy_de_canada"><u>  Yo soy de Canada  </u></string>
+    <string name="example_answers"><b>Example answers:</b></string>
+    <string name="example_answer_1">Yo soy de Canada. ¿Y tu?</string>
+    <string name="example_answer_2">No quiero decírtelo. Tienes que decírmelo</string>
+
 </resources>
