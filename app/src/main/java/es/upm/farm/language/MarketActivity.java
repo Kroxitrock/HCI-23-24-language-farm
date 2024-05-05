@@ -2,14 +2,9 @@ package es.upm.farm.language;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import es.upm.farm.language.databinding.ActivityMarketBinding;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MarketActivity extends AppCompatActivity {
 
@@ -24,7 +19,6 @@ public class MarketActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     public void openMarket(View view) {

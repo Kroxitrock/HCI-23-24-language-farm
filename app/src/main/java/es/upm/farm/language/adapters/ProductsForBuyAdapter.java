@@ -19,17 +19,11 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
     private final List<ProductsForBuy> dataList;
     private final OnButtonClickListener buttonClickListener;
 
-    public interface OnButtonClickListener {
-        void onAddButtonClick(ProductsForBuy dataModel);
-        void onRemoveButtonClick(ProductsForBuy dataModel);
-    }
-
     public ProductsForBuyAdapter(List<ProductsForBuy> dataList, OnButtonClickListener buttonClickListener) {
         this.dataList = dataList;
         //The click listener from the parent
         this.buttonClickListener = buttonClickListener;
     }
-
 
     @NonNull
     @Override
@@ -61,7 +55,6 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
         });
     }
 
-
     private void removeClickListener(@NonNull ViewHolder holder, ProductsForBuy data) {
         holder.removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +71,12 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    public interface OnButtonClickListener {
+        void onAddButtonClick(ProductsForBuy dataModel);
+
+        void onRemoveButtonClick(ProductsForBuy dataModel);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
