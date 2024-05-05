@@ -1,6 +1,8 @@
 package es.upm.farm.language;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +17,11 @@ public class SpeakingCongratsScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_speaking_congrats_screen);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        findViewById(R.id.confirm_button).setOnClickListener(this::openCampFire);
+    }
+
+
+    private void openCampFire(View view) {
+        startActivity(new Intent(this, CampFire.class));
     }
 }
