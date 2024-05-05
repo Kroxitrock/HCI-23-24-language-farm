@@ -6,4 +6,10 @@
     <string name="market_button_dsc">A button leading to the market.</string>
     <string name="speaking">Speaking</string>
     <string name="speaking_button_dsc">A button leading to the speaking exercise camp.</string>
+    <string name="animals">Animals</string>
+    <string name="animals_label_dsc">A sign indicating this is the animal market.</string>
+    <string name="buildings">Buildings</string>
+    <string name="buildings_label_desc">A label indicating that this is the buildings market</string>
+    <string name="crops_label_desc">A label indicating this is the crops market.</string>
+    <string name="crops">Crops</string>
 </resources>
