@@ -13,7 +13,10 @@
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/campfire_ground"
         android:text="@string/start_speaking_exercise"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="wood">#4f200f</color>
+    <color name="campfire_ground">#c09154</color>
 </resources>

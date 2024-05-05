@@ -18,7 +18,7 @@
     <string name="example_answers"><b>Example answers:</b></string>
     <string name="example_answer_1">Yo soy de Canada. ¿Y tu?</string>
     <string name="example_answer_2">No quiero decírtelo. Tienes que decírmelo</string>
-    <string name="start_speaking_exercise">Start Speaking exercise</string>
+    <string name="start_speaking_exercise">Start \n Speaking exercise</string>
 
     <string name="animals">Animals</string>
     <string name="animals_label_dsc">A sign indicating this is the animal market.</string>
