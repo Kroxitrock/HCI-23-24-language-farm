@@ -1,7 +1,6 @@
 package es.upm.farm.language;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -19,24 +18,34 @@ import es.upm.farm.language.models.ProductsForBuy;
 
 public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
 
+    private static Integer coins = 100;
+
     private List<ProductsForBuy> dataList;
 
     private List<ProductsForBuy> productsInCart;
     private TextView totalPrice;
 
+    private View header;
+    private TextView totalCoins;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_buy);
+        setContentView(R.layout.activity_buy_pop_up);
 
+
+        header = findViewById(R.id.header);
         //set header title
-        TextView headerTitle = findViewById(R.id.header).findViewById(R.id.header_title);
+        TextView headerTitle = header.findViewById(R.id.header_title);
         headerTitle.setText("Buy");
+
+        totalCoins = header.findViewById(R.id.coins);
+        totalCoins.setText(Integer.toString(coins));
 
         // Set count of products
         productsInCart = new ArrayList<>();
-        totalPrice = findViewById(R.id.totalPrice);
+        totalPrice = findViewById(R.id.total_price);
         totalPrice.setText(String.valueOf(productsInCart.size()));
 
         //load the list with items for buying
@@ -48,20 +57,46 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
 
 
         //Set buy click listener
-        findViewById(R.id.buyButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Show the confirmation dialog
-                showConfirmationDialog();
-            }
+        findViewById(R.id.buy_button).setOnClickListener(v -> {
+            handleBuyClicked();
+        });
+
+        findViewById(R.id.close_btn).setOnClickListener(view -> {
+            finish();
         });
     }
 
+    private void handleBuyClicked() {
+        int totalPrice = Integer.parseInt(this.totalPrice.getText().toString());
+
+        if (totalPrice == 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Nothing in the cart!");
+            builder.setMessage("You have not selected anything for purchase! Please add some items and try again.");
+            builder.setPositiveButton("Got it!", (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
+        }
+
+        if (totalPrice > coins) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Not enough coins!");
+            builder.setMessage("You do not have enough coins to finish your purchase! Please remove some items and try again.");
+            builder.setPositiveButton("Got it!", (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
+        }
+
+        showConfirmationDialog(totalPrice);
+    }
+
     private void loadDataList() {
-        ProductsForBuy p1 = new ProductsForBuy("Cow", 10);
+        ProductsForBuy p1 = new ProductsForBuy("Cow", 60);
         ProductsForBuy p2 = new ProductsForBuy("Chicken", 20);
-        ProductsForBuy p3 = new ProductsForBuy("Pig", 30);
-        ProductsForBuy p4 = new ProductsForBuy("Rabbit", 15);
+        ProductsForBuy p3 = new ProductsForBuy("Pig", 40);
+        ProductsForBuy p4 = new ProductsForBuy("Rabbit", 25);
         dataList = new ArrayList<>();
         dataList.add(p1);
         dataList.add(p2);
@@ -74,7 +109,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         productsInCart.add(dataModel);
         totalPrice.setText(String.valueOf(
                 productsInCart.stream()
-                        .mapToDouble(ProductsForBuy::getPrice)
+                        .mapToInt(ProductsForBuy::getPrice)
                         .sum()));
     }
 
@@ -83,29 +118,23 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         productsInCart.remove(dataModel);
         totalPrice.setText(String.valueOf(
                 productsInCart.stream()
-                        .mapToDouble(ProductsForBuy::getPrice)
+                        .mapToInt(ProductsForBuy::getPrice)
                         .sum()));
     }
 
-
-    private void showConfirmationDialog() {
+    private void showConfirmationDialog(int totalPrice) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirmation");
         builder.setMessage("Are you sure you want to buy these products?");
 
         // Add the buttons
-        builder.setPositiveButton("Buy", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked Buy button, proceed with the purchase
-                // TODO Add here the buy functionality
-            }
+        builder.setPositiveButton("Buy", (dialog, id) -> {
+            coins -= totalPrice;
+            totalCoins.setText(String.valueOf(coins));
+            dialog.dismiss();
+            finish();
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User cancelled the dialog, do nothing
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton("Cancel", (dialog, id) -> dialog.dismiss());
 
         // Create and show the AlertDialog
         AlertDialog dialog = builder.create();

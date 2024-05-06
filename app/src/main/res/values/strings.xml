@@ -12,4 +12,10 @@
     <string name="buildings_label_desc">A label indicating that this is the buildings market</string>
     <string name="crops_label_desc">A label indicating this is the crops market.</string>
     <string name="crops">Crops</string>
+    <string name="cancel_button">Cancel button.</string>
+    <string name="x">X</string>
+    <string name="coin_icon_dsc">Coin icon</string>
+    <string name="minus">-</string>
+    <string name="sell_sign_dsc">A sign indicating this is the place to sell your produce.</string>
+    <string name="sell">Sell</string>
 </resources>
