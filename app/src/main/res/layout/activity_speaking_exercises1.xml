@@ -74,6 +74,7 @@
                 android:layout_marginStart="10dp"
                 android:textStyle="bold"
                 android:textSize="20sp"
+                android:textColor="@color/black"
                 android:text="@string/x0_5"/>
         </LinearLayout>
 
