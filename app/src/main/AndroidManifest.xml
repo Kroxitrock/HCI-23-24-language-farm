@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:allowBackup="true"
@@ -11,41 +11,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LanguageFarm"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".SpeakingCongratsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CampFire"
+            android:exported="false" />
+        <activity
+            android:name=".SpeakingExercises2"
+            android:exported="false" />
         <activity
             android:name=".start_lang_exc_activity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.LanguageFarm" />
         <activity
             android:name=".lang_ex1_activity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.LanguageFarm" />
         <activity
             android:name=".lang_ex2_activity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.LanguageFarm" />
         <activity
             android:name=".lang_ex3_activity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".SpeakingExercises1"
+            android:exported="false" />
+        <activity
+            android:name=".exc_sum_activity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,15 +55,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".exc_sum_activity"
+            android:name=".MarketActivity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".BuyActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
     </application>
 
 </manifest>
