@@ -12,21 +12,21 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/campfire_ground"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.9"
-        android:background="@color/campfire_ground"
-        android:padding="20dp">
+        app:layout_constraintWidth_percent="0.9">
 
         <TextView
             android:id="@+id/close_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/x"
             android:paddingRight="10dp"
+            android:text="@string/x"
             android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,12 +99,12 @@
 
         <EditText
             android:id="@+id/answer"
-            android:textColor="@color/black"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:ems="10"
             android:inputType="text"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -124,14 +124,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:visibility="invisible"
         android:id="@+id/correct_pop_up"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="5dp"
         android:background="@color/grass"
         android:gravity="center_horizontal"
-        android:padding="10dp"
+        android:padding="15dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="20dp">
 
@@ -142,7 +142,7 @@
             android:gravity="center"
             android:text="... answer!"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="30sp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -162,6 +162,7 @@
             android:backgroundTint="@color/white"
             android:text="@string/continue_str"
             android:textColor="@color/grass"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

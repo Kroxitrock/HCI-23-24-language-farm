@@ -3,8 +3,11 @@ package es.upm.farm.language;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +29,35 @@ public class SpeakingExercises2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showCloseConfirmationDialog();
+            }
+        });
+
+        addMicrophoneFunc();
+        addPlayBtnMedia();
+    }
+
+    private void addPlayBtnMedia() {
+        TextView answer = findViewById(R.id.user_answer);
+
+        if(answer.getText().equals("")) return;
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(SpeakingExercises2.this, R.raw.yo_soy_de_canada);
+
+        ImageView btn_audio = findViewById(R.id.play_button);
+        btn_audio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+            }
+        });
+    }
+
+    private void addMicrophoneFunc() {
+        findViewById(R.id.microphone).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView answer = findViewById(R.id.user_answer);
+                answer.setText("Yo soy de Canada.");
             }
         });
     }
