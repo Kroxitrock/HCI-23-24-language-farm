@@ -99,10 +99,10 @@ public class SellActivity extends AppCompatActivity implements ProductsForBuyAda
     }
 
     private void loadDataList() {
-        ProductsForBuy p1 = new ProductsForBuy("Cow", 60);
-        ProductsForBuy p2 = new ProductsForBuy("Chicken", 20);
-        ProductsForBuy p3 = new ProductsForBuy("Pig", 40);
-        ProductsForBuy p4 = new ProductsForBuy("Rabbit", 25);
+        ProductsForBuy p1 = new ProductsForBuy("Cow", 45, 7);
+        ProductsForBuy p2 = new ProductsForBuy("Chicken", 15, 7);
+        ProductsForBuy p3 = new ProductsForBuy("Cheese", 10, 5);
+        ProductsForBuy p4 = new ProductsForBuy("Eggs", 5, 20);
         dataList = new ArrayList<>();
         dataList.add(p1);
         dataList.add(p2);

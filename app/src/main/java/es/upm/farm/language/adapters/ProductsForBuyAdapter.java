@@ -38,14 +38,19 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
         ProductsForBuy data = dataList.get(position);
         // Bind your data to the views in your list_item_buy.xml layout
         holder.productTextView.setText(data.getProduct());
-        holder.priceTextView.setText(String.format(Locale.ENGLISH,"Price: %d", data.getPrice()));
+        holder.priceTextView.setText(String.format(Locale.ENGLISH, "Price: %d", data.getPrice()));
+
+        if (data.getOwn() < Integer.MAX_VALUE) {
+            holder.own.setText("Own: " + data.getOwn());
+        }
+
         addClickListener(holder, data);
         removeClickListener(holder, data);
     }
 
     private void addClickListener(@NonNull ViewHolder holder, ProductsForBuy data) {
         holder.addButton.setOnClickListener(view -> {
-            if (buttonClickListener != null) {
+            if (buttonClickListener != null && holder.counter < data.getOwn()) {
                 buttonClickListener.onAddButtonClick(data);
                 holder.counter++;
                 holder.counterTextView.setText(String.valueOf(holder.counter));
@@ -83,6 +88,8 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
         ImageButton addButton;
         ImageButton removeButton;
 
+        TextView own;
+
         //counter for the number of the current item added to the basket
         int counter;
 
@@ -97,6 +104,7 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
             addButton = itemView.findViewById(R.id.add);
             removeButton = itemView.findViewById(R.id.remove);
             counterTextView = itemView.findViewById(R.id.counterTextView);
+            own = itemView.findViewById(R.id.own);
         }
     }
 }
