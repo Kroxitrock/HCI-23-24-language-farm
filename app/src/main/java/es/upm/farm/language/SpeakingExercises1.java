@@ -25,28 +25,15 @@ public class SpeakingExercises1 extends AppCompatActivity {
 
 
         setBlackAudioButton();
-        findViewById(R.id.confirm_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showConfirmationMessage();
-            }
-        });
+        findViewById(R.id.confirm_button).setOnClickListener(v -> showConfirmationMessage());
 
 
-        findViewById(R.id.btn_continue).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SpeakingExercises2.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.btn_continue).setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), SpeakingExercises2.class);
+            startActivity(intent);
         });
 
-        findViewById(R.id.close_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showCloseConfirmationDialog();
-            }
-        });
+        findViewById(R.id.close_btn).setOnClickListener(v -> showCloseConfirmationDialog());
     }
 
     private void setBlackAudioButton() {
@@ -79,11 +66,7 @@ public class SpeakingExercises1 extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirmation");
         builder.setMessage("Are you sure you want to cancel your speaking exercises?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-            }
-        });
+        builder.setPositiveButton("Yes", (dialog, id) -> finish());
         builder.setNegativeButton("No", null);
 
         AlertDialog dialog = builder.create();

@@ -1,5 +1,6 @@
 package es.upm.farm.language;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -62,6 +63,20 @@ public class ThirdLanguageExerciseActivity extends AppCompatActivity {
             exc_sum.putExtra("cheese_count", cheese_count);
             startActivity(exc_sum);
         });
+
+        View closeButton = findViewById(R.id.imageView4);
+        closeButton.setOnClickListener(v -> showCloseConfirmationDialog());
+    }
+
+    private void showCloseConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Are you sure you want to cancel your exercises?");
+        builder.setPositiveButton("Yes", (dialog, id) -> startActivity(new Intent(this, MainActivity.class)));
+        builder.setNegativeButton("No", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     protected void validateInput(Integer option){
