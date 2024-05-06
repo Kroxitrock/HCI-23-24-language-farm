@@ -34,4 +34,9 @@
     <string name="_2_2">2/2</string>
     <string name="x">X</string>
     <string name="x0_5">x0.5</string>
+    <string name="cancel_button">Cancel button.</string>
+    <string name="coin_icon_dsc">Coin icon</string>
+    <string name="minus">-</string>
+    <string name="sell_sign_dsc">A sign indicating this is the place to sell your produce.</string>
+    <string name="sell">Sell</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.Locale;
 
 import es.upm.farm.language.R;
 import es.upm.farm.language.models.ProductsForBuy;
@@ -37,20 +38,17 @@ public class ProductsForBuyAdapter extends RecyclerView.Adapter<ProductsForBuyAd
         ProductsForBuy data = dataList.get(position);
         // Bind your data to the views in your list_item_buy.xml layout
         holder.productTextView.setText(data.getProduct());
-        holder.priceTextView.setText(data.getPrice() + " coins");
+        holder.priceTextView.setText(String.format(Locale.ENGLISH,"Price: %d", data.getPrice()));
         addClickListener(holder, data);
         removeClickListener(holder, data);
     }
 
     private void addClickListener(@NonNull ViewHolder holder, ProductsForBuy data) {
-        holder.addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (buttonClickListener != null) {
-                    buttonClickListener.onAddButtonClick(data);
-                    holder.counter++;
-                    holder.counterTextView.setText(String.valueOf(holder.counter));
-                }
+        holder.addButton.setOnClickListener(view -> {
+            if (buttonClickListener != null) {
+                buttonClickListener.onAddButtonClick(data);
+                holder.counter++;
+                holder.counterTextView.setText(String.valueOf(holder.counter));
             }
         });
     }
