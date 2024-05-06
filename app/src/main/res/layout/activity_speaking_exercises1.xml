@@ -66,12 +66,15 @@
                 android:layout_width="46dp"
                 android:layout_height="41dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/slow_listen"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_marginStart="10dp"
-                android:text="Slow" />
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/x0_5"/>
         </LinearLayout>
 
 
@@ -105,15 +108,17 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/grass"
             android:text="@string/confirm"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <FrameLayout
+            android:id="@+id/correct_pop_up"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/correct_pop_up"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#edb66d"
@@ -127,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="... answer!"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:textColor="@color/black"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,7 +141,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tony_said"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     app:layout_constraintBottom_toTopOf="@+id/btn_continue"
                     app:layout_constraintTop_toBottomOf="@+id/result"
                     tools:layout_editor_absoluteX="20dp" />

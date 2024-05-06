@@ -67,8 +67,10 @@ public class SpeakingExercises1 extends AppCompatActivity {
         String answerStr = answer.getText().toString().toLowerCase();
         if (answerStr.contains("de donde eres") || answerStr.contains("de dónde eres")) {
             result.setText("Correct answer!");
+            result.setTextColor(ContextCompat.getColor(this, R.color.grass));
         } else {
             result.setText("Wrong answer!");
+            result.setTextColor(Color.RED);
         }
     }
 

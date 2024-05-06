@@ -12,7 +12,7 @@
     <string name="what_did_tony_say_in_their_language">What did Tony say in their language?</string>
     <string name="confirm">Confirm</string>
     <string name="de_donde_eres">"\"¿De dónde eres?\""</string>
-    <string name="give_an_answer_to_tony">Give an answer to Tony</string>
+    <string name="give_an_answer_to_tony">Give an answer to Tony:</string>
     <string name="yo_soy_de_canada_underline"><u>  Yo soy de Canada  </u></string>
     <string name="yo_soy_de_canada">\"Yo soy de Canada\"</string>
     <string name="example_answers"><b>Example answers:</b></string>
@@ -33,4 +33,5 @@
     <string name="_1_2">1/2</string>
     <string name="_2_2">2/2</string>
     <string name="x">X</string>
+    <string name="x0_5">x0.5</string>
 </resources>
