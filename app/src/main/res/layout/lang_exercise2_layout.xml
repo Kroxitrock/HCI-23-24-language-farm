@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/factory_background">
@@ -46,11 +45,12 @@
 
     <View
         android:id="@+id/divider2"
-        android:layout_width="443dp"
+        android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintWidth_percent="0.9"
         android:layout_marginTop="60dp"/>
 
     <TextView
@@ -95,6 +95,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
+        android:contentDescription="@string/image_of_a_speaker"
         app:layout_constraintStart_toEndOf="@id/textView4"
         app:layout_constraintBottom_toBottomOf="@id/textView4"
         app:srcCompat="@drawable/speaker" />
@@ -105,7 +106,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4A4542"
         android:fontFamily="sans-serif-black"
-        android:text="Chicken"
+        android:text="@string/chicken"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -120,7 +121,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4A4542"
         android:fontFamily="sans-serif-black"
-        android:text="Cauliflower"
+        android:text="@string/cauliflower"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -135,7 +136,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4A4542"
         android:fontFamily="sans-serif-black"
-        android:text="Cow"
+        android:text="@string/cow"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -159,7 +160,6 @@
         app:layout_constraintStart_toStartOf="@id/view2"
         app:layout_constraintTop_toBottomOf="@+id/btn_cauliflower"
         app:layout_constraintVertical_bias="0.195" />
-
 
     <LinearLayout
         android:id="@+id/valid_input_box"

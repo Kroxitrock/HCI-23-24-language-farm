@@ -48,4 +48,10 @@
     <string name="_2_3">2/3</string>
     <string name="image_of_a_cow">Image of a cow.</string>
     <string name="vaca">Vaca</string>
+    <string name="image_of_a_speaker">Image of a speaker.</string>
+    <string name="cauliflower">Cauliflower</string>
+    <string name="cow">Cow</string>
+    <string name="_3_3">3/3</string>
+    <string name="where_is_the_library">¿Donde está la biblioteca?</string>
+    <string name="chicken">Chicken</string>
 </resources>
