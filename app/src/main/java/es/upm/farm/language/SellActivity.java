@@ -83,16 +83,6 @@ public class SellActivity extends AppCompatActivity implements ProductsForBuyAda
             return;
         }
 
-        if (totalPrice > MainActivity.coins) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Not enough coins!");
-            builder.setMessage("You do not have enough coins to finish your purchase! Please remove some items and try again.");
-            builder.setPositiveButton("Got it!", (dialog, id) -> dialog.dismiss());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            return;
-        }
-
         showConfirmationDialog(totalPrice);
     }
 
