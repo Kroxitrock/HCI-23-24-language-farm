@@ -41,8 +41,8 @@
       android:gravity="center"
       android:layout_marginStart="250dp"
       android:layout_marginTop="290dp"
-      android:text="@string/crops"
-      android:contentDescription="@string/crops_label_desc"/>
+      android:text="@string/sell"
+      android:contentDescription="@string/sell_sign_dsc"/>
   <TextView
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
