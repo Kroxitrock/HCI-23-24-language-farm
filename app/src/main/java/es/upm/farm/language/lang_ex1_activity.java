@@ -5,9 +5,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.sql.Timestamp;
+import java.time.Duration;
+import java.time.temporal.Temporal;
+import java.util.Timer;
 
 public class lang_ex1_activity extends AppCompatActivity {
 
@@ -19,14 +25,17 @@ public class lang_ex1_activity extends AppCompatActivity {
    private TextView text_valid_answer;
    private Integer cheese_count = 0;
 
+   private TextView textline_como;
+   private TextView textline_estas;
+   private TextView textline_amigo;
+   private LinearLayout valid_input_box;
+
     protected void onCreate (Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.lang_exercise1_layout);
 
-        btn_continue = findViewById(R.id.btn_continue);
-        btn_continue.setVisibility(View.INVISIBLE);
-        text_valid_answer = findViewById(R.id.text_valid_answer);
-        text_valid_answer.setVisibility(View.INVISIBLE);
+        valid_input_box = findViewById(R.id.valid_input_box);
+        valid_input_box.setVisibility(View.INVISIBLE);
 
 
         //set Button Listeners
@@ -55,6 +64,16 @@ public class lang_ex1_activity extends AppCompatActivity {
             }
         });
 
+        textline_como = findViewById(R.id.textline_como);
+        textline_como.setOnClickListener(v -> textline_como.setText("______"));
+
+        textline_estas = findViewById(R.id.textline_estas);
+        textline_estas.setOnClickListener(v -> textline_estas.setText("______"));
+
+        textline_amigo = findViewById(R.id.textline_amigo);
+        textline_amigo.setOnClickListener(v -> textline_amigo.setText("______"));
+
+        btn_continue = findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,17 +105,20 @@ public class lang_ex1_activity extends AppCompatActivity {
         TextView textline_como = findViewById(R.id.textline_como);
         TextView textline_estas = findViewById(R.id.textline_estas);
         TextView textline_amigo = findViewById(R.id.textline_amigo);
+        text_valid_answer = findViewById(R.id.text_valid_answer);
+
 
         if (textline_como.getText().equals("Cómo") && textline_estas.getText().equals("estás") && textline_amigo.getText().equals("amigo")){
             text_valid_answer.setText("Your answer was correct!");
-            text_valid_answer.setVisibility(View.VISIBLE);
-            btn_continue.setVisibility(View.VISIBLE);
+            valid_input_box.setVisibility(View.VISIBLE);
+            valid_input_box.setBackgroundColor(Color.rgb(67,160,71));
             cheese_count ++;
 
         }else{
             text_valid_answer.setText("Your answer was not correct.");
-            text_valid_answer.setVisibility(View.VISIBLE);
-            btn_continue.setBackgroundColor(Color.rgb(106,37,37));
+            valid_input_box.setVisibility(View.VISIBLE);
+            valid_input_box.setBackgroundColor(Color.rgb(143,42,40));
+            btn_continue.setBackgroundColor(Color.rgb(74,69,66));
             btn_continue.setVisibility(View.VISIBLE);
         }
 

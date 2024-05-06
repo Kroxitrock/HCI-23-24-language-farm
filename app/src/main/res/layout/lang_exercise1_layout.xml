@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/factory_background" />
+        app:srcCompat="@drawable/Factory_Background" />
 
     <TextView
         android:id="@+id/textView"
@@ -37,13 +37,25 @@
         android:layout_width="443dp"
         android:layout_height="954dp"
         android:background="#3E3434"
-        android:backgroundTint="#E6AE8181"
+        android:backgroundTint="#B5A4A4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.39" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="58dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.013"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <View
         android:id="@+id/divider2"
@@ -207,35 +219,37 @@
         app:layout_constraintTop_toBottomOf="@+id/textline_estas"
         app:layout_constraintVertical_bias="0.215" />
 
-    <Button
-        android:id="@+id/btn_continue"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#385A29"
-        android:text="Continue"
-        android:textSize="24sp"
-        android:visibility="visible"
+    <LinearLayout
+        android:id="@+id/valid_input_box"
+        android:layout_width="435dp"
+        android:layout_height="155dp"
+        android:background="#B5A4A4"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_como"
-        app:layout_constraintVertical_bias="0.894" />
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.969">
 
-    <TextView
-        android:id="@+id/text_valid_answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Your answer was correct!"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/btn_continue"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_como"
-        app:layout_constraintVertical_bias="0.925" />
+        <TextView
+            android:id="@+id/text_valid_answer"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Your answer was correct!"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#385A29"
+            android:text="Continue"
+            android:textSize="24sp"
+            android:visibility="visible" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

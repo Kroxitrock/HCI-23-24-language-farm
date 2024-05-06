@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,16 +18,16 @@ public class lang_ex2_activity extends AppCompatActivity {
     private TextView text_valid_answer;
 
     private  Integer cheese_count;
+    private LinearLayout valid_input_box;
 
     protected void onCreate(Bundle saveInstances) {
 
         super.onCreate(saveInstances);
         setContentView(R.layout.lang_exercise2_layout);
 
-        btn_continue = findViewById(R.id.btn_continue);
-        btn_continue.setVisibility(View.INVISIBLE);
-        text_valid_answer = findViewById(R.id.text_valid_answer);
-        text_valid_answer.setVisibility(View.INVISIBLE);
+        valid_input_box = findViewById(R.id.valid_input_box);
+        valid_input_box.setVisibility(View.INVISIBLE);
+
 
         //receiving cheese count
         cheese_count = getIntent().getIntExtra("cheese_count", 1);
@@ -57,7 +58,7 @@ public class lang_ex2_activity extends AppCompatActivity {
             }
         });
 
-        btn_continue.findViewById(R.id.btn_continue);
+        btn_continue = findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(v -> {
             Intent exercise3 = new Intent(lang_ex2_activity.this, lang_ex3_activity.class);
             exercise3.putExtra("cheese_count", cheese_count);
@@ -67,16 +68,19 @@ public class lang_ex2_activity extends AppCompatActivity {
 
 
     protected void handleInput(String word) {
+        text_valid_answer = findViewById(R.id.text_valid_answer);
+
         if (word.equals("Cow")){
             text_valid_answer.setText("Your answer was correct!");
-            text_valid_answer.setVisibility(View.VISIBLE);
-            btn_continue.setVisibility(View.VISIBLE);
-            cheese_count++;
+            valid_input_box.setVisibility(View.VISIBLE);
+            valid_input_box.setBackgroundColor(Color.rgb(67,160,71));
+            cheese_count ++;
 
         }else{
             text_valid_answer.setText("Your answer was not correct.");
-            text_valid_answer.setVisibility(View.VISIBLE);
-            btn_continue.setBackgroundColor(Color.rgb(106,37,37));
+            valid_input_box.setVisibility(View.VISIBLE);
+            valid_input_box.setBackgroundColor(Color.rgb(143,42,40));
+            btn_continue.setBackgroundColor(Color.rgb(74,69,66));
             btn_continue.setVisibility(View.VISIBLE);
 
         }
