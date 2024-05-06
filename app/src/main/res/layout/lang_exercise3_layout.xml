@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/factory_background">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/farming_factory"
-        android:textColor="#E1E1E1"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#3E3434"
-        android:backgroundTint="#B5A4A4"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/factory_red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintHeight_percent="0.9"
-        />
+        app:layout_constraintHeight_percent="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
 
     <TextView
         android:id="@+id/imageView4"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -92,13 +81,14 @@
         app:layout_constraintTop_toBottomOf="@id/textView2"
         app:srcCompat="@drawable/speaker" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_slow_down"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#4A4542"
-        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"
+        android:padding="10dp"
         android:text="@string/x0_5"
+        android:textColor="@color/black"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
@@ -108,6 +98,7 @@
 
     <Button
         android:id="@+id/btn_madrid"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#4A4542"
@@ -126,6 +117,7 @@
         android:layout_width="335dp"
         android:layout_height="65dp"
         android:backgroundTint="#4A4542"
+        android:textColor="@color/white"
         android:fontFamily="sans-serif-black"
         android:text="Al fin del pastillo a la derecha."
         android:textSize="18sp"
@@ -143,6 +135,7 @@
         android:backgroundTint="#4A4542"
         android:fontFamily="sans-serif-black"
         android:text="Como una manzana."
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -158,6 +151,7 @@
         android:backgroundTint="#4A4542"
         android:text="Me gusta jugar fútbol."
         android:textSize="20sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintHorizontal_bias="0.107"

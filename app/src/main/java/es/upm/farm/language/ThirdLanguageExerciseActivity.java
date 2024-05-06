@@ -53,7 +53,7 @@ public class ThirdLanguageExerciseActivity extends AppCompatActivity {
         ImageView iView_audio = findViewById(R.id.btn_audio);
         iView_audio.setOnClickListener(v -> mediaPlayer.start());
 
-        Button btn_slow_down = findViewById(R.id.btn_slow_down);
+        TextView btn_slow_down = findViewById(R.id.btn_slow_down);
         btn_slow_down.setOnClickListener(v -> mediaPlayer_slow_down.start());
 
         btn_continue = findViewById(R.id.btn_continue);
