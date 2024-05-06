@@ -29,7 +29,6 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_buy_sell);
 
 

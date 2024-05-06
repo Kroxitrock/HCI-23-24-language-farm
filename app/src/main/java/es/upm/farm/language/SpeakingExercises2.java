@@ -18,7 +18,7 @@ public class SpeakingExercises2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        EdgeToEdge.enable(this);
+        
         setContentView(R.layout.activity_speaking_exercises2);
         findViewById(R.id.confirm_button).setOnClickListener(this::openCongratsScreen);
 

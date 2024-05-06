@@ -16,7 +16,7 @@ public class CampFire extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        
         setContentView(R.layout.activity_camp_fire);
         findViewById(R.id.start_exc).setOnClickListener(this::openSpeakingEx1);
         findViewById(R.id.market_button).setOnClickListener(this::openMarket);
