@@ -12,13 +12,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LanguageFarm"
         tools:targetApi="31">
+
         <activity
             android:name=".SellActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".SpeakingCongratsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".CampFire"
+            android:exported="false" />
+        <activity
+            android:name=".SpeakingExercises2"
+            android:exported="false" />
+        <activity
+            android:name=".StartLanguageExerciseActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".FirstLanguageExerciseActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".SecondLanguageExerciseActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".ThirdLanguageExerciseActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
+        <activity
+            android:name=".SpeakingExercises1"
+            android:exported="false" />
+        <activity
+            android:name=".ExerciseSumActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LanguageFarm" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
+            android:theme="@style/Theme.LanguageFarm" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,11 +62,11 @@
         <activity
             android:name=".MarketActivity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm"></activity>
+            android:theme="@style/Theme.LanguageFarm" />
         <activity
             android:name=".BuyActivity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm"></activity>
+            android:theme="@style/Theme.LanguageFarm" />
     </application>
 
 </manifest>

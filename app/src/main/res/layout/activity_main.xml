@@ -9,7 +9,7 @@
     android:background="@drawable/farm">
 
     <Button
-        android:id="@+id/factory_button"
+        android:id="@+id/speaking_button"
         app:backgroundTint="@null"
         android:textColor="@color/white"
         android:background="@drawable/signpost"
@@ -18,7 +18,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginBottom="150dp"
         android:layout_gravity="bottom"
-        android:text="@string/factory"
+        android:text="@string/speaking"
         android:contentDescription="@string/factory_button_dsc">
     </Button>
 
@@ -38,7 +38,7 @@
     </Button>
 
     <Button
-        android:id="@+id/speaking_button"
+        android:id="@+id/factory_button"
         app:backgroundTint="@null"
         android:textColor="@color/white"
         android:background="@drawable/signpost"
@@ -47,7 +47,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="260dp"
         android:layout_gravity="bottom|end"
-        android:text="@string/speaking"
+        android:text="@string/factory"
         android:contentDescription="@string/speaking_button_dsc">
 
     </Button>
