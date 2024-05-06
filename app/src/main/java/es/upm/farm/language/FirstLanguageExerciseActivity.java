@@ -10,12 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.Timestamp;
-import java.time.Duration;
-import java.time.temporal.Temporal;
-import java.util.Timer;
-
-public class lang_ex1_activity extends AppCompatActivity {
+public class FirstLanguageExerciseActivity extends AppCompatActivity {
 
     private Button como_btn;
     private Button estas_btn;
@@ -77,7 +72,7 @@ public class lang_ex1_activity extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent exercise2 = new Intent(lang_ex1_activity.this, lang_ex2_activity.class);
+                Intent exercise2 = new Intent(FirstLanguageExerciseActivity.this, SecondLanguageExerciseActivity.class);
                 exercise2.putExtra("cheese_count", cheese_count);
                 startActivity(exercise2);
             }

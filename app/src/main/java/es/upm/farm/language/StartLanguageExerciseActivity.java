@@ -6,7 +6,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class start_lang_exc_activity extends AppCompatActivity {
+public class StartLanguageExerciseActivity extends AppCompatActivity {
 
     protected void onCreate (Bundle saveInstances) {
 
@@ -15,7 +15,7 @@ public class start_lang_exc_activity extends AppCompatActivity {
 
         Button start_exc = findViewById(R.id.btn_start_exc);
         start_exc.setOnClickListener(v -> {
-            Intent exercise1 = new Intent(start_lang_exc_activity.this, lang_ex1_activity.class);
+            Intent exercise1 = new Intent(StartLanguageExerciseActivity.this, FirstLanguageExerciseActivity.class);
             startActivity(exercise1);
         });
     }

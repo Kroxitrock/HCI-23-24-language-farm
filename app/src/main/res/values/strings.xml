@@ -39,4 +39,10 @@
     <string name="minus">-</string>
     <string name="sell_sign_dsc">A sign indicating this is the place to sell your produce.</string>
     <string name="sell">Sell</string>
+    <string name="_1_3">1/3</string>
+    <string name="how_are_you_my_friend">How are you my friend?</string>
+    <string name="farming_factory">Farming Factory</string>
+    <string name="question_mark">\?</string>
+    <string name="blank_space">______</string>
+    <string name="correct_answer">Your answer was correct!</string>
 </resources>

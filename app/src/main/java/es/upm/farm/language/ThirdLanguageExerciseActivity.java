@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class lang_ex3_activity extends AppCompatActivity {
+public class ThirdLanguageExerciseActivity extends AppCompatActivity {
 
     Button btn_continue;
     TextView text_valid_answer;
@@ -34,8 +34,8 @@ public class lang_ex3_activity extends AppCompatActivity {
         cheese_count = getIntent().getIntExtra("cheese_count", 2);
 
         //setup media player for audio content
-        MediaPlayer mediaPlayer = MediaPlayer.create(lang_ex3_activity.this, R.raw.donde_esta);
-        MediaPlayer mediaPlayer_slow_down = MediaPlayer.create(lang_ex3_activity.this, R.raw.donde_esta_slow_down);
+        MediaPlayer mediaPlayer = MediaPlayer.create(ThirdLanguageExerciseActivity.this, R.raw.donde_esta);
+        MediaPlayer mediaPlayer_slow_down = MediaPlayer.create(ThirdLanguageExerciseActivity.this, R.raw.donde_esta_slow_down);
 
 
         Button btn_madrid = findViewById(R.id.btn_madrid);
@@ -58,7 +58,7 @@ public class lang_ex3_activity extends AppCompatActivity {
 
         btn_continue = findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(v -> {
-            Intent exc_sum = new Intent(lang_ex3_activity.this, exc_sum_activity.class);
+            Intent exc_sum = new Intent(ThirdLanguageExerciseActivity.this, ExerciseSumActivity.class);
             exc_sum.putExtra("cheese_count", cheese_count);
             startActivity(exc_sum);
         });

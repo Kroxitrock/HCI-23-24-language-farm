@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class exc_sum_activity extends AppCompatActivity {
+public class ExerciseSumActivity extends AppCompatActivity {
 
     private Integer cheese_count;
 

@@ -27,6 +27,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openLanguageEx(View view) {
-        startActivity(new Intent(this, lang_ex1_activity.class));
+        startActivity(new Intent(this, FirstLanguageExerciseActivity.class));
     }
 }
