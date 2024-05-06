@@ -17,7 +17,7 @@ import java.util.List;
 import es.upm.farm.language.adapters.ProductsForBuyAdapter;
 import es.upm.farm.language.models.ProductsForBuy;
 
-public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
+public class SellActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
 
     private static Integer coins = 100;
 
@@ -39,7 +39,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         header = findViewById(R.id.header);
         //set header title
         TextView headerTitle = header.findViewById(R.id.header_title);
-        headerTitle.setText("Buy");
+        headerTitle.setText("Sell");
 
         totalCoins = header.findViewById(R.id.coins);
         totalCoins.setText(Integer.toString(coins));
@@ -49,7 +49,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         totalPrice = findViewById(R.id.total_price);
         totalPrice.setText(String.valueOf(productsInCart.size()));
 
-        //load the list with items for buying
+
         loadDataList();
         RecyclerView recyclerView = findViewById(R.id.productsList);
         ProductsForBuyAdapter adapter = new ProductsForBuyAdapter(dataList, this);
@@ -57,8 +57,9 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         recyclerView.setAdapter(adapter);
 
 
+        //Set buy click listener
         Button actionButton = findViewById(R.id.action_button);
-        actionButton.setText("Buy");
+        actionButton.setText("Sell");
         actionButton.setOnClickListener(v -> {
             handleBuyClicked();
         });
@@ -67,9 +68,8 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
             finish();
         });
 
-
         TextView plus = findViewById(R.id.minusPlusText);
-        plus.setText("-");
+        plus.setText("+");
     }
 
     private void handleBuyClicked() {
@@ -131,10 +131,10 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
     private void showConfirmationDialog(int totalPrice) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirmation");
-        builder.setMessage("Are you sure you want to buy these products?");
+        builder.setMessage("Are you sure you want to sell these products?");
 
         // Add the buttons
-        builder.setPositiveButton("Buy", (dialog, id) -> {
+        builder.setPositiveButton("Sell", (dialog, id) -> {
             coins -= totalPrice;
             totalCoins.setText(String.valueOf(coins));
             dialog.dismiss();

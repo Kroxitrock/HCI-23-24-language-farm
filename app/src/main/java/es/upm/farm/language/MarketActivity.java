@@ -14,11 +14,16 @@ public class MarketActivity extends AppCompatActivity {
         setContentView(R.layout.activity_market);
 
         findViewById(R.id.animalStand).setOnClickListener(this::openBuyActivity);
+        findViewById(R.id.sell_stand).setOnClickListener(this::openSellActivity);
     }
 
 
     private void openBuyActivity(View view) {
         startActivity(new Intent(this, BuyActivity.class));
+    }
+
+    private void openSellActivity(View view) {
+        startActivity(new Intent(this, SellActivity.class));
     }
 
 
