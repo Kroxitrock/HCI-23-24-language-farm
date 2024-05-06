@@ -14,37 +14,47 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
-    <ImageButton
+    <TextView
         android:id="@+id/close_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/cancel_button"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+        android:textSize="25sp"
+        android:text="@string/x"/>
 
     <TextView
         android:id="@+id/header_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Text"
         android:textColor="@android:color/white"
         android:textSize="35sp" />
 
     <TextView
         android:id="@+id/coins"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Coins:10"
+        android:text="10"
         android:textColor="@android:color/white"
-        android:textSize="25sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/coins_image"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/coins_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/coins"
+        android:background="@drawable/gold_coin"
+        android:contentDescription="@string/coin_icon_dsc"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

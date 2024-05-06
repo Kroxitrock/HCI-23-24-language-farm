@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/market"
     android:orientation="vertical"
     tools:context=".BuyActivity">
@@ -33,7 +34,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -41,38 +42,75 @@
             android:layout_marginBottom="50dp"
             android:gravity="end">
 
-            <TextView
-                android:id="@+id/coinsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Coins: - "
-                android:textColor="@color/white"
-                android:textSize="40sp" />
+
 
             <TextView
-                android:id="@+id/totalPrice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:textSize="40sp" />
-
-            <TextView
-                android:id="@+id/buyButton"
+                android:id="@+id/minusText"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:text="@string/minus"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/minusText"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/coins_image2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:background="@drawable/gold_coin"
+                app:layout_constraintStart_toEndOf="@id/total_price"
+                app:layout_constraintTop_toTopOf="@id/total_price"
+                app:layout_constraintBottom_toBottomOf="@id/minusText"/>
+
+            <Button
+                android:id="@+id/buy_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@null"
                 android:background="@drawable/wooden_tile_button"
-                android:gravity="center"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
                 android:text="Buy"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/totalPrice"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/buyButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/wooden_tile_button"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingLeft="30dp"-->
+<!--                android:paddingRight="30dp"-->
+<!--                android:text="Buy"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="25sp" />-->
 
 
 
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
        </LinearLayout>
 
 </LinearLayout>
