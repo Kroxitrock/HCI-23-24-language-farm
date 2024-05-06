@@ -50,7 +50,7 @@ public class ThirdLanguageExerciseActivity extends AppCompatActivity {
         Button btn_futbol = findViewById(R.id.btn_futbol);
         btn_futbol.setOnClickListener(v -> validateInput(4));
 
-        ImageView iView_audio = findViewById(R.id.iView_audio);
+        ImageView iView_audio = findViewById(R.id.btn_audio);
         iView_audio.setOnClickListener(v -> mediaPlayer.start());
 
         Button btn_slow_down = findViewById(R.id.btn_slow_down);

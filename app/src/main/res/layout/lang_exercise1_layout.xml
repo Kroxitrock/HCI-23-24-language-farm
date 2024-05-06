@@ -45,11 +45,12 @@
 
     <View
         android:id="@+id/divider2"
-        android:layout_width="443dp"
+        android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintWidth_percent="0.9"
         android:layout_marginTop="60dp"/>
 
     <TextView
