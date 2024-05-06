@@ -45,4 +45,7 @@
     <string name="question_mark">\?</string>
     <string name="blank_space">______</string>
     <string name="correct_answer">Your answer was correct!</string>
+    <string name="_2_3">2/3</string>
+    <string name="image_of_a_cow">Image of a cow.</string>
+    <string name="vaca">Vaca</string>
 </resources>

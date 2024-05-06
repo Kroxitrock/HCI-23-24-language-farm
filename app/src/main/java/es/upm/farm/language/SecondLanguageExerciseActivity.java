@@ -80,7 +80,6 @@ public class SecondLanguageExerciseActivity extends AppCompatActivity {
             text_valid_answer.setText("Your answer was not correct.");
             valid_input_box.setVisibility(View.VISIBLE);
             valid_input_box.setBackgroundColor(Color.rgb(143,42,40));
-            btn_continue.setBackgroundColor(Color.rgb(74,69,66));
             btn_continue.setVisibility(View.VISIBLE);
 
         }
