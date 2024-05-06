@@ -20,6 +20,7 @@ public class MarketActivity extends AppCompatActivity {
         findViewById(R.id.speaking_button).setOnClickListener(this::openSpeakingActivity);
         findViewById(R.id.cropStand).setOnClickListener(this::underConstruction);
         findViewById(R.id.buildingStand).setOnClickListener(this::underConstruction);
+        findViewById(R.id.factory_button).setOnClickListener(this::openFactoryActivity);
     }
 
     private void openSpeakingActivity(View view) {
@@ -45,6 +46,10 @@ public class MarketActivity extends AppCompatActivity {
 
     private void openFarmActivity(View view) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    private void openFactoryActivity(View view) {
+        startActivity(new Intent(this, FirstLanguageExerciseActivity.class));
     }
 
 

@@ -82,10 +82,10 @@ public class SpeakingExercises1 extends AppCompatActivity {
         TextView answer = findViewById(R.id.answer);
         String answerStr = answer.getText().toString().toLowerCase();
         if (answerStr.contains("de donde eres") || answerStr.contains("de dónde eres")) {
-            result.setText("Correct answer!");
+            result.setText("Your answer was correct!");
             pop_up.setBackgroundColor(ContextCompat.getColor(this, R.color.grass));
         } else {
-            result.setText("Wrong answer!");
+            result.setText("Your answer was not correct!");
             pop_up.setBackgroundColor(Color.rgb(143,42,40));
         }
     }
