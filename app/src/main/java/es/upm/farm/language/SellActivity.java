@@ -17,7 +17,8 @@ import java.util.List;
 import es.upm.farm.language.adapters.ProductsForBuyAdapter;
 import es.upm.farm.language.models.ProductsForBuy;
 
-public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
+public class SellActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
+
     private List<ProductsForBuy> dataList;
 
     private List<ProductsForBuy> productsInCart;
@@ -36,7 +37,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         header = findViewById(R.id.header);
         //set header title
         TextView headerTitle = header.findViewById(R.id.header_title);
-        headerTitle.setText("Buy");
+        headerTitle.setText("Sell");
 
         totalCoins = header.findViewById(R.id.coins);
         totalCoins.setText(Integer.toString(MainActivity.coins));
@@ -46,7 +47,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         totalPrice = findViewById(R.id.total_price);
         totalPrice.setText(String.valueOf(productsInCart.size()));
 
-        //load the list with items for buying
+
         loadDataList();
         RecyclerView recyclerView = findViewById(R.id.productsList);
         ProductsForBuyAdapter adapter = new ProductsForBuyAdapter(dataList, this);
@@ -54,8 +55,9 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         recyclerView.setAdapter(adapter);
 
 
+        //Set buy click listener
         Button actionButton = findViewById(R.id.action_button);
-        actionButton.setText("Buy");
+        actionButton.setText("Sell");
         actionButton.setOnClickListener(v -> {
             handleBuyClicked();
         });
@@ -64,9 +66,8 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
             finish();
         });
 
-
         TextView plus = findViewById(R.id.minusPlusText);
-        plus.setText("-");
+        plus.setText("+");
     }
 
     private void handleBuyClicked() {
@@ -82,24 +83,14 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
             return;
         }
 
-        if (totalPrice > MainActivity.coins) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Not enough coins!");
-            builder.setMessage("You do not have enough coins to finish your purchase! Please remove some items and try again.");
-            builder.setPositiveButton("Got it!", (dialog, id) -> dialog.dismiss());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            return;
-        }
-
         showConfirmationDialog(totalPrice);
     }
 
     private void loadDataList() {
-        ProductsForBuy p1 = new ProductsForBuy("Cow", 60);
-        ProductsForBuy p2 = new ProductsForBuy("Chicken", 20);
-        ProductsForBuy p3 = new ProductsForBuy("Pig", 40);
-        ProductsForBuy p4 = new ProductsForBuy("Rabbit", 25);
+        ProductsForBuy p1 = new ProductsForBuy("Cow", 45, 7);
+        ProductsForBuy p2 = new ProductsForBuy("Chicken", 15, 7);
+        ProductsForBuy p3 = new ProductsForBuy("Cheese", 10, 5);
+        ProductsForBuy p4 = new ProductsForBuy("Eggs", 5, 20);
         dataList = new ArrayList<>();
         dataList.add(p1);
         dataList.add(p2);
@@ -128,11 +119,11 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
     private void showConfirmationDialog(int totalPrice) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirmation");
-        builder.setMessage("Are you sure you want to buy these products?");
+        builder.setMessage("Are you sure you want to sell these products?");
 
         // Add the buttons
-        builder.setPositiveButton("Buy", (dialog, id) -> {
-            MainActivity.coins -= totalPrice;
+        builder.setPositiveButton("Sell", (dialog, id) -> {
+            MainActivity.coins += totalPrice;
             totalCoins.setText(String.valueOf(MainActivity.coins));
             dialog.dismiss();
             finish();
