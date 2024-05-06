@@ -17,8 +17,13 @@ public class MarketActivity extends AppCompatActivity {
         findViewById(R.id.animalStand).setOnClickListener(this::openBuyActivity);
         findViewById(R.id.sell_stand).setOnClickListener(this::openSellActivity);
         findViewById(R.id.farm_button).setOnClickListener(this::openFarmActivity);
+        findViewById(R.id.speaking_button).setOnClickListener(this::openSpeakingActivity);
         findViewById(R.id.cropStand).setOnClickListener(this::underConstruction);
         findViewById(R.id.buildingStand).setOnClickListener(this::underConstruction);
+    }
+
+    private void openSpeakingActivity(View view) {
+        startActivity(new Intent(this, CampFire.class));
     }
 
     private void underConstruction(View view) {

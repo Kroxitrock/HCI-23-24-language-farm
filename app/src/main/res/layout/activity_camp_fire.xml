@@ -17,7 +17,7 @@
         android:layout_marginEnd="4dp"
         android:background="@drawable/signpost"
         android:contentDescription="@string/factory_button_dsc"
-        android:text="@string/speaking"
+        android:text="@string/farm"
         android:textColor="@color/white"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
