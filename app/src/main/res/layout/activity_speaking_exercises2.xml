@@ -10,9 +10,14 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.9"
         android:background="@color/campfire_ground"
         android:padding="20dp">
 
@@ -21,8 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/x"
+            android:paddingRight="10dp"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_1_2"
-            android:textSize="20dp"
+            android:textSize="30sp"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +53,7 @@
             android:paddingTop="50dp"
             android:textColor="@color/black"
             android:text="@string/you_have_a_message_from_tony"
-            android:textSize="15sp"
+            android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/close_btn"
             tools:layout_editor_absoluteX="20dp" />
 
@@ -57,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="20sp"
             android:text="@string/de_donde_eres"
             app:layout_constraintTop_toBottomOf="@+id/textView1"
             tools:layout_editor_absoluteX="20dp" />
@@ -69,7 +76,7 @@
             android:paddingTop="50dp"
             android:textColor="@color/black"
             android:text="@string/give_an_answer_to_tony"
-            android:textSize="15sp"
+            android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/textView10"
             tools:layout_editor_absoluteX="20dp" />
 
@@ -113,6 +120,7 @@
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"
+            android:textSize="20sp"
             android:text="@string/yo_soy_de_canada"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -149,6 +157,7 @@
             android:layout_height="wrap_content"
             android:text="@string/confirm"
             android:textColor="@color/white"
+            android:textSize="20sp"
             android:backgroundTint="@color/grass"
             app:layout_constraintBottom_toBottomOf="parent" />
 
