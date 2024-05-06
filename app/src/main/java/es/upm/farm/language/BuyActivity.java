@@ -18,9 +18,6 @@ import es.upm.farm.language.adapters.ProductsForBuyAdapter;
 import es.upm.farm.language.models.ProductsForBuy;
 
 public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
-
-    private static Integer coins = 100;
-
     private List<ProductsForBuy> dataList;
 
     private List<ProductsForBuy> productsInCart;
@@ -42,7 +39,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         headerTitle.setText("Buy");
 
         totalCoins = header.findViewById(R.id.coins);
-        totalCoins.setText(Integer.toString(coins));
+        totalCoins.setText(Integer.toString(MainActivity.coins));
 
         // Set count of products
         productsInCart = new ArrayList<>();
@@ -85,7 +82,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
             return;
         }
 
-        if (totalPrice > coins) {
+        if (totalPrice > MainActivity.coins) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Not enough coins!");
             builder.setMessage("You do not have enough coins to finish your purchase! Please remove some items and try again.");
@@ -135,8 +132,8 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
 
         // Add the buttons
         builder.setPositiveButton("Buy", (dialog, id) -> {
-            coins -= totalPrice;
-            totalCoins.setText(String.valueOf(coins));
+            MainActivity.coins -= totalPrice;
+            totalCoins.setText(String.valueOf(MainActivity.coins));
             dialog.dismiss();
             finish();
         });
