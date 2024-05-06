@@ -1,5 +1,6 @@
 package es.upm.farm.language;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,11 +29,8 @@ public class ExerciseSumActivity extends AppCompatActivity {
 
         text_cheese_count.setText(cheese_count.toString() + "x ");
 
-        Button btn_back_to_farm = findViewById(R.id.btn_back_to_farm);
-        /**
-         *
-         * btn_back_to_farm.setOnClickListener(v ->);
-         */
+        Button backToFarmButton = findViewById(R.id.btn_back_to_farm);
 
+        backToFarmButton.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
     }
 }
