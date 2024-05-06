@@ -1,7 +1,6 @@
 package es.upm.farm.language;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ import es.upm.farm.language.models.ProductsForBuy;
 
 public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdapter.OnButtonClickListener {
 
-    private Integer coins = 100;
+    private static Integer coins = 100;
 
     private List<ProductsForBuy> dataList;
 
@@ -59,13 +58,38 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
 
         //Set buy click listener
         findViewById(R.id.buy_button).setOnClickListener(v -> {
-            // Show the confirmation dialog
-            showConfirmationDialog();
+            handleBuyClicked();
         });
 
         findViewById(R.id.close_btn).setOnClickListener(view -> {
             finish();
         });
+    }
+
+    private void handleBuyClicked() {
+        int totalPrice = Integer.parseInt(this.totalPrice.getText().toString());
+
+        if (totalPrice == 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Nothing in the cart!");
+            builder.setMessage("You have not selected anything for purchase! Please add some items and try again.");
+            builder.setPositiveButton("Got it!", (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
+        }
+
+        if (totalPrice > coins) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Not enough coins!");
+            builder.setMessage("You do not have enough coins to finish your purchase! Please remove some items and try again.");
+            builder.setPositiveButton("Got it!", (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            return;
+        }
+
+        showConfirmationDialog(totalPrice);
     }
 
     private void loadDataList() {
@@ -85,7 +109,7 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         productsInCart.add(dataModel);
         totalPrice.setText(String.valueOf(
                 productsInCart.stream()
-                        .mapToDouble(ProductsForBuy::getPrice)
+                        .mapToInt(ProductsForBuy::getPrice)
                         .sum()));
     }
 
@@ -94,29 +118,23 @@ public class BuyActivity extends AppCompatActivity implements ProductsForBuyAdap
         productsInCart.remove(dataModel);
         totalPrice.setText(String.valueOf(
                 productsInCart.stream()
-                        .mapToDouble(ProductsForBuy::getPrice)
+                        .mapToInt(ProductsForBuy::getPrice)
                         .sum()));
     }
 
-
-    private void showConfirmationDialog() {
+    private void showConfirmationDialog(int totalPrice) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirmation");
         builder.setMessage("Are you sure you want to buy these products?");
 
         // Add the buttons
-        builder.setPositiveButton("Buy", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked Buy button, proceed with the purchase
-                // TODO Add here the buy functionality
-            }
+        builder.setPositiveButton("Buy", (dialog, id) -> {
+            coins -= totalPrice;
+            totalCoins.setText(String.valueOf(coins));
+            dialog.dismiss();
+            finish();
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User cancelled the dialog, do nothing
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton("Cancel", (dialog, id) -> dialog.dismiss());
 
         // Create and show the AlertDialog
         AlertDialog dialog = builder.create();
