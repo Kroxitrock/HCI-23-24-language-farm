@@ -33,7 +33,7 @@ public class SellActivity extends AppCompatActivity implements ProductsForBuyAda
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_buy_pop_up);
+        setContentView(R.layout.activity_buy_sell);
 
 
         header = findViewById(R.id.header);
