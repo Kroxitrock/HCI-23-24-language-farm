@@ -1,7 +1,6 @@
 package es.upm.farm.language;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -10,8 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
@@ -20,7 +19,7 @@ public class SpeakingExercises1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         setContentView(R.layout.activity_speaking_exercises1);
 
 
@@ -48,16 +47,17 @@ public class SpeakingExercises1 extends AppCompatActivity {
     }
 
     private void showConfirmationMessage() {
-        findViewById(R.id.correct_pop_up).setVisibility(View.VISIBLE);
+        ConstraintLayout pop_up = findViewById(R.id.correct_pop_up);
+        pop_up.setVisibility(View.VISIBLE);
         TextView result = findViewById(R.id.result);
         TextView answer = findViewById(R.id.answer);
         String answerStr = answer.getText().toString().toLowerCase();
         if (answerStr.contains("de donde eres") || answerStr.contains("de dónde eres")) {
             result.setText("Correct answer!");
-            result.setTextColor(ContextCompat.getColor(this, R.color.grass));
+            pop_up.setBackgroundColor(ContextCompat.getColor(this, R.color.grass));
         } else {
             result.setText("Wrong answer!");
-            result.setTextColor(Color.RED);
+            pop_up.setBackgroundColor(Color.rgb(143,42,40));
         }
     }
 
