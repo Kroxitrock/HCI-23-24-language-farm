@@ -45,10 +45,9 @@
 
 
             <TextView
-                android:id="@+id/minusText"
+                android:id="@+id/minusPlusText"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/minus"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +62,7 @@
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/minusText"
+                app:layout_constraintStart_toEndOf="@id/minusPlusText"
                 app:layout_constraintTop_toTopOf="parent" />
             <ImageView
                 android:id="@+id/coins_image2"
@@ -73,42 +72,18 @@
                 android:background="@drawable/gold_coin"
                 app:layout_constraintStart_toEndOf="@id/total_price"
                 app:layout_constraintTop_toTopOf="@id/total_price"
-                app:layout_constraintBottom_toBottomOf="@id/minusText"/>
+                app:layout_constraintBottom_toBottomOf="@id/minusPlusText"/>
 
             <Button
-                android:id="@+id/buy_button"
+                android:id="@+id/action_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:backgroundTint="@null"
                 android:background="@drawable/wooden_tile_button"
-                android:text="Buy"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
-
-<!--            <TextView-->
-<!--                android:id="@+id/totalPrice"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="40sp" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/buyButton"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@drawable/wooden_tile_button"-->
-<!--                android:gravity="center"-->
-<!--                android:paddingLeft="30dp"-->
-<!--                android:paddingRight="30dp"-->
-<!--                android:text="Buy"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="25sp" />-->
-
-
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
        </LinearLayout>

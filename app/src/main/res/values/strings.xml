@@ -19,7 +19,6 @@
     <string name="example_answer_1">Yo soy de Canada. ¿Y tu?</string>
     <string name="example_answer_2">No quiero decírtelo. Tienes que decírmelo</string>
     <string name="start_speaking_exercise">Start \n Speaking exercise</string>
-
     <string name="animals">Animals</string>
     <string name="animals_label_dsc">A sign indicating this is the animal market.</string>
     <string name="buildings">Buildings</string>
@@ -39,6 +38,8 @@
     <string name="minus">-</string>
     <string name="sell_sign_dsc">A sign indicating this is the place to sell your produce.</string>
     <string name="sell">Sell</string>
+    <string name="farm">Farm</string>
+    <string name="farm_button_dsc">A button leading to the farm.</string>
     <string name="_1_3">1/3</string>
     <string name="how_are_you_my_friend">How are you my friend?</string>
     <string name="farming_factory">Farming Factory</string>
