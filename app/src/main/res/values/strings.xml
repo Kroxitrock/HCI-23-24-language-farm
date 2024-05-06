@@ -18,4 +18,6 @@
     <string name="minus">-</string>
     <string name="sell_sign_dsc">A sign indicating this is the place to sell your produce.</string>
     <string name="sell">Sell</string>
+    <string name="farm">Farm</string>
+    <string name="farm_button_dsc">A button leading to the farm.</string>
 </resources>

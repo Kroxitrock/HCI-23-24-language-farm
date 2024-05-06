@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LanguageFarm"
         tools:targetApi="31">
         <activity
+            android:name=".SellActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.LanguageFarm">
@@ -25,14 +28,11 @@
         <activity
             android:name=".MarketActivity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
-        </activity>
+            android:theme="@style/Theme.LanguageFarm"></activity>
         <activity
             android:name=".BuyActivity"
             android:exported="true"
-            android:theme="@style/Theme.LanguageFarm">
-        </activity>
-
+            android:theme="@style/Theme.LanguageFarm"></activity>
     </application>
 
 </manifest>
