@@ -99,6 +99,7 @@
 
         <EditText
             android:id="@+id/answer"
+            android:textColor="@color/black"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

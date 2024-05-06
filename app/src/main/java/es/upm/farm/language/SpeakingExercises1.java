@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,6 +34,34 @@ public class SpeakingExercises1 extends AppCompatActivity {
         });
 
         findViewById(R.id.close_btn).setOnClickListener(v -> showCloseConfirmationDialog());
+
+
+        addSpeakingFunc();
+        addSlowSpeakingFunc();
+    }
+
+    private void addSpeakingFunc() {
+        MediaPlayer mediaPlayer = MediaPlayer.create(SpeakingExercises1.this, R.raw.de_donde_eres);
+
+        ImageView btn_audio = findViewById(R.id.btn_audio);
+        btn_audio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+            }
+        });
+    }
+
+    private void addSlowSpeakingFunc() {
+        MediaPlayer mediaPlayer = MediaPlayer.create(SpeakingExercises1.this, R.raw.de_donde_eres_slow);
+
+        TextView btn_audio = findViewById(R.id.slow_listen);
+        btn_audio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+            }
+        });
     }
 
     private void setBlackAudioButton() {
