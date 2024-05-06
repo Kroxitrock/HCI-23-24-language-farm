@@ -15,6 +15,7 @@ public class MarketActivity extends AppCompatActivity {
 
         findViewById(R.id.animalStand).setOnClickListener(this::openBuyActivity);
         findViewById(R.id.sell_stand).setOnClickListener(this::openSellActivity);
+        findViewById(R.id.farm_button).setOnClickListener(this::openFarmActivity);
     }
 
 
@@ -25,6 +26,11 @@ public class MarketActivity extends AppCompatActivity {
     private void openSellActivity(View view) {
         startActivity(new Intent(this, SellActivity.class));
     }
+
+    private void openFarmActivity(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
 
 
 }
